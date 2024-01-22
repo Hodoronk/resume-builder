@@ -1,0 +1,120 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: rgba(236, 236, 236, 0.829);
+
+}
+#container{
+  display: flex;
+  overflow: hidden;
+}
+#resume{
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#resume-paper{
+
+height: 100vh;
+width: 100%;
+box-sizing: border-box;
+}
+
+#form{
+  width: 40%;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3em;
+  overflow: scroll;
+  overflow-x: hidden;
+  flex: 1;
+}
+
+.form-section {
+  display: flex;
+  justify-content: row;
+  width: 100%;
+  margin-bottom: 2em;
+  border-radius: 20px;
+  padding: 1em;
+  background-color: rgb(200, 200, 201);
+}
+.form-section button{
+  margin-left: auto;
+}
+.form-section img{
+  height:50;
+  width: 50px;
+  margin-right: 1em;
+}
+form button{
+  height: 50px;
+  width: 50px;
+  margin-left: auto;
+  margin-right: 2em;
+  
+}
+
+form{
+  background-color: rgb(200, 200, 201);
+  border-radius: 10px;
+  margin-bottom: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
+  padding-bottom: 5%;
+  align-items: flex-start;
+}
+
+.input-group{
+  display:flex;
+  flex-direction: column;
+  font-weight: bolder;
+  font-size: 1.5em;
+  width: 80%;
+  margin-bottom: 5%;
+}
+.input-group input{
+  background-color: rgb(236, 233, 233);
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+  font-size: 0.5em;
+  border-style: none;
+  border-radius: 10px;
+  height: 2vh;
+  padding: 10px;
+}
+
+.label-text{
+  font-size: 2vh;
+
+}
+
+input::placeholder{
+  color:rgba(0, 0, 0, 0.322);
+  font-weight: bolder;
+}
+
+button{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+
+button .icon{
+  height: 50px;
+  width:50px;
+}
+

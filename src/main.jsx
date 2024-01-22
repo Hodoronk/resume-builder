@@ -1,16 +1,27 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import ClearOrLoad from './ClearOrLoad.jsx'
-import GeneralInfo from './GeneralInfo.jsx'
-import Education from './Education.jsx'
-import Experience from './Experience.jsx'
+import ClearOrLoad from './components/ClearOrLoad.jsx'
+import GeneralInfo from './components/GeneralInfo.jsx'
+import Education from './components/Education.jsx'
+import Experience from './components/Experience.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <div id="container">
+    <div id = 'form'>
     <ClearOrLoad />
     <GeneralInfo />
     <Education />
     <Experience />
+    </div>
+
+    <div id="resume">
+      <h1>RESUME</h1>
+      <div id="resume-paper">
+
+      </div>
+    </div>
+    </div>
   </React.StrictMode>,
 )
