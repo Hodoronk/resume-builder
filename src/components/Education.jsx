@@ -1,6 +1,8 @@
 import { useState } from "react";
 import InputField from "./inputField";
 import SectionThumbnail from "./SectionThumbnail";
+import FromUntil from "./FromUntil";
+import SaveAndBack from "./SaveNBack";
 
 export default function Education () {
     const [dropDown, setDropDownArrow] = useState(false)
@@ -52,22 +54,10 @@ export default function Education () {
                 onChange={(e) => setCountry(e.target.value)}
                     />
 
-                <InputField
-                type="date"
-                label='From'
-                id='date'
-                onChange={(e) => setCountry(e.target.value)}
-                />           
-                <InputField
-                type="date"
-                label='Until'
-                id='date'
-                onChange={(e) => setCountry(e.target.value)}
-                />  
+                <FromUntil/>
+                <SaveAndBack />
 
 
-
-            <button onClick={handleDropDownChange}><img src="src/assets/up-arrow.svg" alt="up-icon" className="up-icon" /></button>
             </form>
         )
     }

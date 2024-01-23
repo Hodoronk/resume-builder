@@ -1,6 +1,8 @@
 import { useState } from "react"
 import InputField from "./inputField"
 import SectionThumbnail from "./SectionThumbnail"
+import FromUntil from "./FromUntil"
+import SaveAndBack from "./SaveNBack"
 
 export default function Experience () {
     const [dropDown, setDropDown] = useState(false)
@@ -42,10 +44,8 @@ export default function Experience () {
                 onChange={(e) => setDescription(e.target.value)}
                 />
 
-
-                <button>Save</button>
-                <button onClick={handleDropDownChange}>Close</button>
-
+                <FromUntil />
+                <SaveAndBack/>
             </form>
         )
     }

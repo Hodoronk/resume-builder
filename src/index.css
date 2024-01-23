@@ -1,12 +1,18 @@
+*{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+
 body{
   margin: 0;
   padding: 0;
   background-color: rgba(236, 236, 236, 0.829);
 
+
 }
 #container{
   display: flex;
-  overflow: hidden;
+
 }
 #resume{
   flex: 2;
@@ -19,19 +25,21 @@ body{
 height: 100vh;
 width: 100%;
 box-sizing: border-box;
+overflow: hidden;
 }
 
 #form{
   width: 40%;
   height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  background-color: rgba(101, 133, 194, 0.637);;
   align-items: center;
   padding: 3em;
-  overflow: scroll;
-  overflow-x: hidden;
   flex: 1;
 }
 
@@ -52,11 +60,16 @@ box-sizing: border-box;
   width: 50px;
   margin-right: 1em;
 }
+
+.form-section:hover{
+  background-color: rgba(0, 0, 255, 0.267);
+}
 form button{
   height: 50px;
   width: 50px;
   margin-left: auto;
   margin-right: 2em;
+  margin-top: 2em;
   
 }
 
@@ -93,10 +106,10 @@ form{
 
 .label-text{
   font-size: 2vh;
-
 }
 
-input::placeholder{
+input::placeholder,
+textarea::placeholder{
   color:rgba(0, 0, 0, 0.322);
   font-weight: bolder;
 }
@@ -118,3 +131,75 @@ button .icon{
   width:50px;
 }
 
+.from-until{
+  width: 100%;
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+  align-items: center;
+}
+.from-until span{
+  font-weight:bolder;
+  margin-bottom: 1em;
+}
+.from-until div{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.form-buttons{
+  display:flex;
+  flex-direction: row;
+  width :100%;
+  justify-content: center;
+  align-items: center;
+
+}
+.form-buttons #save-button{
+margin-right: auto;
+width: 40%;
+border-radius: 15px;
+background-color: rgb(38, 182, 38);
+font-size: 1.3em;
+font-weight: bolder;
+color: white;
+flex: 1;
+}
+
+
+textarea{
+  border-radius: 10px;
+  border-style: none;
+  background-color: rgb(236, 233, 233);
+  padding: 2em;
+}
+
+#skill-div {
+  display: flex;
+  width: 100%;
+  
+}
+
+#delete-button{
+  margin: 0;
+  padding: 0;
+  margin-left: 2em;
+}
+#skills-form {
+  width: 100%;
+  height: 100%;
+
+}
+#plus-btn{
+
+  margin-right: 50%;
+  border-radius: 100%;
+  background-color: rgba(0, 128, 0, 0.63);
+  color: white;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
