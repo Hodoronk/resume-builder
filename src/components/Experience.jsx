@@ -67,10 +67,10 @@ export function Experience ({experience, onExperienceChange, onSaveExperience}) 
     }
     return(
         <SectionThumbnail
-        iconSrc='src/assets/briefcase.svg'
+        iconSrc='public/assets/briefcase.svg'
         sectionName='Experience'
         onClick={handleDropDownChange}
-        openSrc='src/assets/plus.svg'
+        openSrc='public/assets/plus.svg'
        />
     )
 }

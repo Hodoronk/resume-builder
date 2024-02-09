@@ -76,10 +76,10 @@ export function Education ({education, onEducationChange, onSaveEducation}) {
 
     return(
         <SectionThumbnail
-        iconSrc='src/assets/degree.svg'
+        iconSrc='public/assets/degree.svg'
         sectionName='Education'
         onClick={handleDropDownChange}
-        openSrc='src/assets/plus.svg'
+        openSrc='public/assets/plus.svg'
        />
     )
 }
