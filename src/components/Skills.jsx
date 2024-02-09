@@ -5,7 +5,7 @@ function Skill({onDelete}) {
     return(
         <div id ='skill-div'>
             <InputField id='skill' placeholder="Enter your skill" />
-            <button onClick={onDelete} id='delete-button'><img src="public/assets/trash-2.svg" alt="" /></button>
+            <button onClick={onDelete} id='delete-button'><img src="/assets/trash-2.svg" alt="" /></button>
         </div>
     )
 }
@@ -37,7 +37,7 @@ export function Skills() {
                     <Skill key={skill.id} onDelete={() => handleDelete(skill.id)} />
                 )
             ))}
-            <button type="button" onClick={handleAddSkill} id="plus-btn" > <img src="public/assets/plus.svg" alt="" /> </button>
+            <button type="button" onClick={handleAddSkill} id="plus-btn" > <img src="/assets/plus.svg" alt="" /> </button>
         </form>
     );
 }
