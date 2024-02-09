@@ -10,7 +10,7 @@ const handleSaveClick = (event) => {
           Save
         </button>
         <button id="back-button" onClick={backOnClick}>
-          <img src="src/assets/up-arrow.svg" alt="up-icon" className="up-icon" />
+          <img src="/assets/up-arrow.svg" alt="up-icon" className="up-icon" />
         </button>
       </div>
     );
