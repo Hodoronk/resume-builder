@@ -7,6 +7,7 @@ body{
   margin: 0;
   padding: 0;
   background-color: rgba(236, 236, 236, 0.829);
+  overflow-x: scroll;
 
 
 }
@@ -19,16 +20,30 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background-color: antiquewhite;
+
+
 }
 #resume-paper{
-
-height: 100vh;
+background-color: white;
+min-height: 100vh;
 width: 100%;
 box-sizing: border-box;
-overflow: hidden;
+overflow-x: hidden;
+display: flex;
+flex-direction: column;
+width: 80%;
+border-radius: 2px;
+-webkit-box-shadow: 5px 0px 21px 8px rgba(0,0,0,0.25);
+-moz-box-shadow: 5px 0px 21px 8px rgba(0,0,0,0.25);
+box-shadow: 5px 0px 21px 8px rgba(0,0,0,0.25);
+margin-bottom: 5vh;
+
 }
 
 #form{
+  position: sticky;
   width: 40%;
   height: 100vh;
   overflow-x: hidden;
@@ -41,6 +56,7 @@ overflow: hidden;
   align-items: center;
   padding: 3em;
   flex: 1;
+
 }
 
 .form-section {
@@ -195,11 +211,100 @@ textarea{
 }
 #plus-btn{
 
-  margin-right: 50%;
-  border-radius: 100%;
-  background-color: rgba(0, 128, 0, 0.63);
+  margin-right: 100%;
+  border-radius: 15px;
+  background-color: rgb(38, 182, 38);
   color: white;
   display:flex;
   justify-content: center;
   align-items: center;
+}
+
+#resume-top{
+  width: 100%;
+  height: 25%;
+  background-color: rgba(15, 15, 57, 0.85);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  flex-wrap: wrap;
+  
+}
+
+#resume-top h5{
+  color: rgb(221, 218, 218);
+  font-size: 2em;
+}
+
+#personal-details{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 1em;
+  color:rgb(199, 199, 199);
+}
+
+#personal-details span{
+  display: flex;
+  align-items: center;
+}
+#personal-details svg{
+  margin-right :0.5em;
+  margin-left: 0.5em;
+
+}
+
+.section-title{
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  background-color: rgba(0, 0, 255, 0.19);
+  padding: 0.6em;
+  justify-self: center;
+  align-self: center;
+  color: rgb(15, 52, 108);
+}
+
+.resume-section{
+  padding-left: 3em;
+  padding-right: 3em;
+  padding-top: 3em;
+}
+
+.section-details{
+  display:flex;
+  flex-direction: row;
+  padding-right: 3em;
+  padding-left: 3em;
+  justify-content: space-between;
+}
+.section-dates{
+  margin-right: 10em;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+
+}
+
+.section-stats{
+  margin-top: -1em;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+#description-container{
+  width: 30em;
+  word-wrap:break-word;
+}
+
+
+.section-stats h4{
+  margin-bottom: 0;
+}
+.section-stats span{
+  margin-bottom: 1em;
 }

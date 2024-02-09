@@ -1,13 +1,11 @@
 import { useState } from 'react';
-import ClearOrLoad from './ClearOrLoad.jsx';
-import GeneralInfo from './GeneralInfo.jsx';
-import Education from './Education.jsx';
-import Experience from './Experience.jsx';
-import Skills from './Skills.jsx';
-import ResumeGenereal from './Resume-General.jsx';
-import ExperienceSection from './ExperienceSection.jsx';
-import clearEducationField from './utils.js';
-import EducationSection from './EducationSection.jsx';
+import {GeneralInfo, ResumeGenereal} from './GeneralInfo.jsx';
+import {Education, EducationSection} from './Education.jsx';
+import {Experience, ExperienceSection} from './Experience.jsx';
+import {Skills,  SkillSection } from './Skills.jsx';
+import { checkFields } from './utils.js';
+import { clearEducationField, clearExperienceField } from './utils.js';
+
 
 export default function App () {
 
@@ -37,19 +35,18 @@ export default function App () {
 
   const handleEducationChange = (field, value) => {
     setEducation((prevInfo) => ({ ...prevInfo, [field]: value }));
+    
   };
 
   const handleEducationSave = () => {
-    setSavedEducations((prevEducations) => ([... prevEducations, education]));
-    clearEducationField(setEducation);
+      if(checkFields(education)) {
+        setSavedEducations((prevEducations) => ([... prevEducations, education]));
+        clearEducationField(setEducation);
+      }
   }
 
-
-
-
-
-
   // Experience input and saving
+  const [savedExperience, setSavedExperience] = useState([]);
   const [experience, setExperience] = useState({
     jobTitle: '',
     company: '',
@@ -58,28 +55,34 @@ export default function App () {
     from: '',
     until: '',
   })
+
   const handleExperienceChange = (field, value) => {
     setExperience((prevInfo) => ({...prevInfo, [field]: value}))
-
   }
+
+  const handleExperienceSave = () => {
+    if(checkFields(experience)) {
+      setSavedExperience((prevExperience) => ([... prevExperience, experience]));
+      clearExperienceField(setExperience)
+    }
+  }
+
+  const [skills, setSkills] = useState([])
   
-
-
-
   return (
       <div id="container">
         <div id="form">
-          <ClearOrLoad />
           <GeneralInfo personalInfo={personalInfo} onPersonalInfoChange={handlePersonalInfoChange} />
           <Education education={education} onEducationChange={handleEducationChange} onSaveEducation={handleEducationSave}/>
-          <Experience  experience={experience} onExperienceChange={handleExperienceChange} />
-          <Skills />
+          <Experience  experience={experience} onExperienceChange={handleExperienceChange} onSaveExperience={handleExperienceSave} />
+          <Skills setSkills={setSkills} />
         </div>
         <div id="resume">
         <div id="resume-paper">
           <ResumeGenereal  personalInfo={personalInfo} />
           <EducationSection savedEducations={savedEducation} />
-          <ExperienceSection experience={experience} />
+          <ExperienceSection savedExperiences={savedExperience} />
+          <SkillSection skills={skills} />
           </div>
         </div>
       </div>

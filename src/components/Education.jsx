@@ -6,7 +6,7 @@ import FromUntil from "./FromUntil";
 import SaveAndBack from "./SaveNBack";
 
 
-export default function Education ({education, onEducationChange, onSaveEducation}) {
+export function Education ({education, onEducationChange, onSaveEducation}) {
     const { degree, school, city, country, from, until} = education;
 
     const [dropDown, setDropDown] = useState(false)
@@ -62,7 +62,10 @@ export default function Education ({education, onEducationChange, onSaveEducatio
                 />
                 <SaveAndBack 
                 backOnClick={handleDropDownChange}
-                onSave={onSaveEducation}
+                onSave = {() => {
+                    onSaveEducation();
+                    setDropDown(!dropDown);
+                }}
                  />
 
 
@@ -79,4 +82,28 @@ export default function Education ({education, onEducationChange, onSaveEducatio
         openSrc='src/assets/plus.svg'
        />
     )
+}
+
+
+export function EducationSection({ savedEducations }) {
+    return (
+        <>
+            <div className='resume-section'>
+                <h2 className='section-title'>Education</h2>
+            </div>
+            {savedEducations.map((education, index) => (
+                <div key={index} className="section-details">
+                    
+                    <div className="section-dates">
+                        <span>{education.from} - {education.until}</span>
+                        <span>{education.city}, {education.country}</span>
+                    </div>
+                    <div className="section-stats">
+                        <h4>{education.degree}</h4>
+                        <span>{education.school}</span>
+                    </div>
+                </div>
+            ))}
+        </>
+    );
 }

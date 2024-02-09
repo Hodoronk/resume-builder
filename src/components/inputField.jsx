@@ -1,4 +1,4 @@
-export default function InputField({ label, id, placeholder, value, type = "text", onChange }) {
+export default function InputField({ label, id, placeholder, value, type = "text", onChange, maxLength=60, }) {
     return (
       <div className="input-group">
         <label htmlFor={id}>
@@ -10,14 +10,16 @@ export default function InputField({ label, id, placeholder, value, type = "text
             placeholder={placeholder}
             value={value}
             onChange={onChange}
-          />
-        ) : (
-          <input
-            type={type}
-            id={id}
-            placeholder={placeholder}
-            value={value}
-            onChange={onChange}
+            />
+            ) : (
+              <input
+              maxLength={maxLength}
+              type={type}
+              id={id}
+              placeholder={placeholder}
+              value={value}
+              onChange={onChange}
+
           />
         )}
       </div>
